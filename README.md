@@ -10,7 +10,7 @@ This repository contains code for training and inferring a Hindi Optical Charact
 - [Inference](#inference)
 - [Checkpoint Management](#checkpoint-management)
 - [Sample Data Format](#sample-data-format)
-- [License](#license)
+
 
 ## Installation
 
