@@ -83,7 +83,7 @@ To train the OCR model, follow these steps:
     --dataset /kaggle/working/output_data.json \
     --output_dir /kaggle/working/hindi_got_model_3 \
     --num_train_epochs 1 \
-    --max_steps 1000 \
+    --max_steps 4000 \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 4 \
     --learning_rate 2e-5 \
@@ -91,9 +91,9 @@ To train the OCR model, follow these steps:
     --lora_alpha 32 \
     --lora_dropout 0.05 \
     --evaluation_strategy steps \
-    --eval_steps 200 \
+    --eval_steps 500 \
     --save_strategy steps \
-    --save_steps 200
+    --save_steps 500
     ```
 
 3. The training checkpoint will be saved in the specified `output_dir`.
@@ -129,7 +129,7 @@ To train the OCR model, follow these steps:
 
     ```bash
     !CUDA_VISIBLE_DEVICES=0 swift infer\
-    --ckpt_dir /kaggle/working/hindi_got_model_3/got-ocr2/v0-20240930-060444/checkpoint-1000 \
+    --ckpt_dir /kaggle/working/hindi_got_model_3/got-ocr2/v0-20240930-060444/checkpoint-4000 \
     --dataset /kaggle/working/test1.json \
     --load_dataset_config true
     ```
@@ -139,7 +139,7 @@ To train the OCR model, follow these steps:
 1. After training, compress the checkpoint for easy downloading or transfer:
 
     ```bash
-    !zip -r /kaggle/working/checkpoint-1000.zip /kaggle/working/hindi_got_model_3/got-ocr2/v0-20240930-060444/checkpoint-1000
+    !zip -r /kaggle/working/checkpoint-1000.zip /kaggle/working/hindi_got_model_3/got-ocr2/v0-20240930-060444/checkpoint-4000
     ```
 
 The zip file will be created in the `/kaggle/working/` directory.
